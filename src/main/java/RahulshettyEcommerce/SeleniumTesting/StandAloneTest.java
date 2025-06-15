@@ -44,6 +44,8 @@ public class StandAloneTest {
 		List<WebElement> cartProducts = driver.findElements(By.xpath("//div[contains(@class,'cartSection')]/h3"));
 		Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
 		Assert.assertTrue(match, "Added to cart successfully");
+		
+		driver.close();
 
 		
 	}
